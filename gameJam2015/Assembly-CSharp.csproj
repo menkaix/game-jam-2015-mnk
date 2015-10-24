@@ -50,7 +50,7 @@
      <Compile Include="Assets\Move.cs" />
      <Compile Include="Assets\Scripts\Balle.cs" />
      <Compile Include="Assets\Scripts\BellBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Main.cs" />
+     <Compile Include="Assets\Scripts\CamsFollow.cs" />
      <Compile Include="Assets\Scripts\Perso.cs" />
      <Compile Include="Assets\Spawner.cs" />
      <Compile Include="Assets\StickTo.cs" />
