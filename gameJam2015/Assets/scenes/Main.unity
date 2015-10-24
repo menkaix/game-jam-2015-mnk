@@ -2044,11 +2044,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893c0c73ce157074fa014d7d03a0204f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .699999988
+  speed: .0500000007
   right: {fileID: 1946153517}
   ball_sp: 80000
   balles: []
-  follow_speed: 1
+  follow_speed: 3
   camsTarget: {fileID: 248408774}
   bombe: {fileID: 2095263149}
   bouclie: {fileID: 1066544220}
