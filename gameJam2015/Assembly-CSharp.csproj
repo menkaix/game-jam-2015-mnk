@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AutoMove.cs" />
+     <Compile Include="Assets\Canon.cs" />
      <Compile Include="Assets\Ennemy.cs" />
      <Compile Include="Assets\FollowMouse.cs" />
      <Compile Include="Assets\Scripts\Balle.cs" />

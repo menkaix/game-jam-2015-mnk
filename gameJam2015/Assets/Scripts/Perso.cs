@@ -13,9 +13,9 @@ public class Perso : MonoBehaviour {
 	
 	
 	//items
-	public GameObject bombe;
-	public GameObject bouclie;
-	public GameObject barriere;
+	public GameObject bombModel;
+	public GameObject wardModel;
+	public GameObject barrierModel;
 	
 	public static int items=0;
 	
@@ -51,38 +51,26 @@ public class Perso : MonoBehaviour {
 			items=2;
 		}
 		
-		if (Input.GetMouseButtonDown (0)) {
-			
-			RaycastHit objectHit;
-			//Vector3 fwd = transform.TransformDirection(Vector3.forward);
-			Debug.DrawRay(transform.position, transform.forward * 100, Color.green);
-			if (Physics.Raycast(transform.position, transform.forward, out objectHit))
-			{
-                objectHit.transform.gameObject.GetComponent<Ennemy>().Die();
-			}
-		}
+		
 		
 		if (Input.GetMouseButtonDown (1)) {
 			switch(items){
 			case 0:
 				//Debug.Log("instanciating bombe...");
-				GameObject bomb =(GameObject)Instantiate(bombe, bombe.transform.position, Quaternion.identity);
+				GameObject bomb = GameObject.Instantiate(bombModel, bombModel.transform.position, bombModel.transform.rotation) as GameObject;
 				bomb.SetActive(true);
-				bomb.GetComponent<MeshRenderer>().enabled=true;
 				bomb.transform.parent=null;
 				break;
-			case 1:	
-				//Debug.Log("instanciating bouclie...");
-				GameObject boucl =(GameObject)Instantiate(bouclie, bouclie.transform.position, Quaternion.identity);
-				bouclie.SetActive(true);
-				boucl.GetComponent<MeshRenderer>().enabled=true;
-				boucl.transform.parent=null;
+			case 1:
+                    //Debug.Log("instanciating bouclie...");
+                GameObject ward =GameObject.Instantiate(wardModel, wardModel.transform.position, wardModel.transform.rotation) as GameObject;
+                ward.SetActive(true);
+				ward.transform.parent=null;
 				break;
 			case 2:	
 				//Debug.Log("instanciating bombe...");
-				GameObject barrier =(GameObject)Instantiate(barriere, barriere.transform.position, Quaternion.identity);
+				GameObject barrier = GameObject.Instantiate(barrierModel, barrierModel.transform.position, barrierModel.transform.rotation) as GameObject;
 				barrier.SetActive(true);
-				barrier.GetComponent<MeshRenderer>().enabled=true;
 				barrier.transform.parent=null;
 				break;
 			}
