@@ -10,7 +10,7 @@ public class Perso : MonoBehaviour {
 	public GameObject [] balles;
 	public float follow_speed=1f;
 	public GameObject camsTarget;
-	private static Vector3 track_offset;
+	
 	
 	//items
 	public GameObject bombe;
@@ -21,26 +21,25 @@ public class Perso : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		track_offset=camsTarget.transform.position-transform.position;
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit hit;
-		if (Physics.Raycast(ray, out hit)) {
-			Debug.DrawLine(ray.origin, hit.point);
-			
-			//gameObject.transform.position = new Vector3(hit.point.x, transform.position.y, hit.point.z);
-			//Vector3 targetLookAt = hit.point - transform.position ;
-			
-			transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+		RaycastHit [] hits = Physics.RaycastAll(ray);
+		foreach(RaycastHit hit in hits)
+        {
+            if (hit.transform.gameObject.layer == 8)
+            {
+                transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+                break ;
+            }
 		}
-		transform.position = new Vector3 (transform.position.x + speed * Input.GetAxis ("Horizontal"), transform.position.y, transform.position.z + speed * Input.GetAxis ("Vertical"));
+
+        //transform.position = new Vector3 (transform.position.x + speed * Input.GetAxis ("Horizontal"), transform.position.y, transform.position.z + speed * Input.GetAxis ("Vertical"));
 		
-		if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0){
-			camsTarget.transform.position = transform.position+track_offset;
-		}
+		
 		
 		if(Input.GetKeyDown("u")){
 			items=0;
@@ -53,25 +52,13 @@ public class Perso : MonoBehaviour {
 		}
 		
 		if (Input.GetMouseButtonDown (0)) {
-			//if(iter>9){
-			//	iter=0;
-			//}
-			Vector3 mousep=Input.mousePosition;
-			mousep.z= Vector3.Distance(Camera.main.transform.position, transform.position);;
-			Vector3 direction = Camera.main.ScreenToWorldPoint(mousep);
-			//balles[iter].transform.parent=null;
-			//balles[iter].GetComponent<SphereCollider> ().isTrigger = false;
-			//balles[iter].GetComponent<Rigidbody>().AddForce(direction*ball_sp);
-			//iter++;
+			
 			RaycastHit objectHit;
-			Vector3 fwd = transform.TransformDirection(Vector3.forward);
-			Debug.DrawRay(transform.position, fwd * 100, Color.green);
-			if (Physics.Raycast(transform.position, fwd, out objectHit, 100))
+			//Vector3 fwd = transform.TransformDirection(Vector3.forward);
+			Debug.DrawRay(transform.position, transform.forward * 100, Color.green);
+			if (Physics.Raycast(transform.position, transform.forward, out objectHit))
 			{
-				//do something if hit object ie
-				//if(objectHit.name=="Enemy"){
-				Debug.Log("enemis: "+objectHit.transform.gameObject.name);
-				//}
+                objectHit.transform.gameObject.GetComponent<Ennemy>().Die();
 			}
 		}
 		

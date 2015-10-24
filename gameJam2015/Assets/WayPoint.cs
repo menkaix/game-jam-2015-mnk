@@ -32,8 +32,6 @@ public class WayPoint : MonoBehaviour {
 			else
 				GameObject.Destroy(other.gameObject);
 		}
-
-		print ("boom");
-
+        
 	}
 }
