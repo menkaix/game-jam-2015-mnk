@@ -45,19 +45,20 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AutoMove.cs" />
-     <Compile Include="Assets\Canon.cs" />
-     <Compile Include="Assets\Ennemy.cs" />
      <Compile Include="Assets\FollowMouse.cs" />
+     <Compile Include="Assets\Scripts\AutoMove.cs" />
      <Compile Include="Assets\Scripts\Balle.cs" />
      <Compile Include="Assets\Scripts\BellBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Bomb.cs" />
      <Compile Include="Assets\Scripts\CamsFollow.cs" />
+     <Compile Include="Assets\Scripts\Canon.cs" />
+     <Compile Include="Assets\Scripts\Ennemy.cs" />
      <Compile Include="Assets\Scripts\Move.cs" />
      <Compile Include="Assets\Scripts\Perso.cs" />
+     <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\StickTo.cs" />
      <Compile Include="Assets\Scripts\Tracking.cs" />
-     <Compile Include="Assets\Spawner.cs" />
-     <Compile Include="Assets\WayPoint.cs" />
+     <Compile Include="Assets\Scripts\WayPoint.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
