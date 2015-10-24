@@ -27,7 +27,7 @@ public class Perso : MonoBehaviour {
 		transform.rotation = Quaternion.Euler(new Vector3(0,-angle,0));
 
 		if (Input.GetKey("z")) {
-			cams.transform.position += GameObject.Find("Cams") * follow_speed;
+//			cams.transform.position += GameObject.Find("Cams") * follow_speed;
 			Vector3 next=new Vector3(Input.mousePosition.x,0,Input.mousePosition.z);
 			transform.Translate(next* Time.deltaTime*speed);
 		}
