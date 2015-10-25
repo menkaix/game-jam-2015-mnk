@@ -46,28 +46,7 @@ public class Perso : MonoBehaviour {
 			items=2;
 		}
 		
-		if (Input.GetMouseButtonDown (0)) {
-			//if(iter>9){
-			//	iter=0;
-			//}
-			Vector3 mousep=Input.mousePosition;
-			mousep.z= Vector3.Distance(Camera.main.transform.position, transform.position);;
-			Vector3 direction = Camera.main.ScreenToWorldPoint(mousep);
-			//balles[iter].transform.parent=null;
-			//balles[iter].GetComponent<SphereCollider> ().isTrigger = false;
-			//balles[iter].GetComponent<Rigidbody>().AddForce(direction*ball_sp);
-			//iter++;
-			RaycastHit objectHit;
-			Vector3 fwd = transform.TransformDirection(Vector3.forward);
-			//Debug.DrawRay(transform.position, fwd * 100, Color.green);
-			if (Physics.Raycast(transform.position, fwd, out objectHit, 100))
-			{
-				//do something if hit object ie
-				//if(objectHit.name=="Enemy"){
-				Debug.Log("enemis: "+objectHit.transform.gameObject.name);
-				//}
-			}
-		}
+
 		
 		if (Input.GetMouseButtonDown (1)) {
 			switch(items){
@@ -82,7 +61,7 @@ public class Perso : MonoBehaviour {
 			case 1:	
 				//Debug.Log("instanciating bouclie...");
 				GameObject boucl =(GameObject)Instantiate(bouclie, bouclie.transform.position, bouclie.transform.rotation);
-				bouclie.SetActive(true);
+				boucl.SetActive(true);
 				boucl.GetComponent<MeshRenderer>().enabled=true;
 				boucl.transform.parent=null;
 				break;

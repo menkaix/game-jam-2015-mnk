@@ -18,6 +18,9 @@ public class WayPoint : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 
+		if (other.GetComponent<Ennemy> () == null)
+			return ;
+
 		float factor = Random.value - Random.value;
 
 		if (factor < 0) {
