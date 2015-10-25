@@ -29,7 +29,7 @@ public class Perso : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit)) {
-			Debug.DrawLine(ray.origin, hit.point);
+			//Debug.DrawLine(ray.origin, hit.point);
 			
 			//gameObject.transform.position = new Vector3(hit.point.x, transform.position.y, hit.point.z);
 			//Vector3 targetLookAt = hit.point - transform.position ;
@@ -65,7 +65,7 @@ public class Perso : MonoBehaviour {
 			//iter++;
 			RaycastHit objectHit;
 			Vector3 fwd = transform.TransformDirection(Vector3.forward);
-			Debug.DrawRay(transform.position, fwd * 100, Color.green);
+			//Debug.DrawRay(transform.position, fwd * 100, Color.green);
 			if (Physics.Raycast(transform.position, fwd, out objectHit, 100))
 			{
 				//do something if hit object ie
@@ -79,21 +79,22 @@ public class Perso : MonoBehaviour {
 			switch(items){
 			case 0:
 				//Debug.Log("instanciating bombe...");
-				GameObject bomb =(GameObject)Instantiate(bombe, bombe.transform.position, Quaternion.identity);
+				Vector3 pos=new Vector3(bombe.transform.position.x,bombe.transform.position.y,bombe.transform.position.z);
+				GameObject bomb =(GameObject)Instantiate(bombe, pos, Quaternion.identity);
 				bomb.SetActive(true);
 				bomb.GetComponent<MeshRenderer>().enabled=true;
 				bomb.transform.parent=null;
 				break;
 			case 1:	
 				//Debug.Log("instanciating bouclie...");
-				GameObject boucl =(GameObject)Instantiate(bouclie, bouclie.transform.position, Quaternion.identity);
+				GameObject boucl =(GameObject)Instantiate(bouclie, bouclie.transform.position, bouclie.transform.rotation);
 				bouclie.SetActive(true);
 				boucl.GetComponent<MeshRenderer>().enabled=true;
 				boucl.transform.parent=null;
 				break;
 			case 2:	
 				//Debug.Log("instanciating bombe...");
-				GameObject barrier =(GameObject)Instantiate(barriere, barriere.transform.position, Quaternion.identity);
+				GameObject barrier =(GameObject)Instantiate(barriere, barriere.transform.position, barriere.transform.rotation);
 				barrier.SetActive(true);
 				barrier.GetComponent<MeshRenderer>().enabled=true;
 				barrier.transform.parent=null;

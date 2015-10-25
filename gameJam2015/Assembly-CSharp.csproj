@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\BellBehaviour.cs" />
      <Compile Include="Assets\Scripts\CamsFollow.cs" />
      <Compile Include="Assets\Scripts\Perso.cs" />
+     <Compile Include="Assets\Scripts\timer.cs" />
      <Compile Include="Assets\Spawner.cs" />
      <Compile Include="Assets\StickTo.cs" />
      <Compile Include="Assets\Tracking.cs" />
