@@ -7,27 +7,35 @@ public  abstract class BellBehaviour : MonoBehaviour {
 	public int loop ;
 
 	private float pTime ;
+    private float cLoop ;
 
 
 
 	// Use this for initialization
 	void Start () {
-		pTime = Time.time;
+        reset();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		float cTime = Time.time;
-		if (cTime - pTime >= period && loop !=0) {
+		if (cTime - pTime >= period && cLoop != 0) {
 
-				loop-- ;
-				if(loop<0)loop = -1 ;
-				action ();
-				pTime = cTime ;
-
-
+            cLoop-- ;
+			if(cLoop < 0)
+                cLoop = -1 ;
+			action ();
+			pTime = cTime ;
+            
 		}
 	}
 
-	public abstract void action ();
+    public void reset()
+    {
+        pTime = Time.time;
+        cLoop = loop;
+    }
+
+	public abstract void action () ;
+    public abstract void onZero() ;
 }

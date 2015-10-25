@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Spawner : BellBehaviour {
 
 	public GameObject original ;
@@ -19,5 +20,10 @@ public class Spawner : BellBehaviour {
 			go.gameObject.transform.LookAt(GetComponent<WayPoint>().way2.transform.position);
 		}
 	}
+
+    public override void onZero()
+    {
+        
+    }
 
 }
