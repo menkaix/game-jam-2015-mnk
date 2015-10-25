@@ -31,7 +31,10 @@ public class Canon : MonoBehaviour {
             lineRenderer.SetVertexCount(2);
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, objectHit.point);
-            objectHit.transform.gameObject.GetComponent<Ennemy>().Die();
+            Ennemy en = objectHit.transform.gameObject.GetComponent<Ennemy>();
+			if(en != null){
+				en.Die();
+			}
         }
         else
         {

@@ -21,7 +21,7 @@ public class Perso : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		track_offset=camsTarget.transform.position-transform.position;
+
 	}
 	
 	// Update is called once per frame
@@ -29,18 +29,12 @@ public class Perso : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit)) {
-			//Debug.DrawLine(ray.origin, hit.point);
-			
-			//gameObject.transform.position = new Vector3(hit.point.x, transform.position.y, hit.point.z);
-			//Vector3 targetLookAt = hit.point - transform.position ;
-			
+
 			transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
 		}
 		transform.position = new Vector3 (transform.position.x + speed * Input.GetAxis ("Horizontal"), transform.position.y, transform.position.z + speed * Input.GetAxis ("Vertical"));
 		
-		if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0){
-			camsTarget.transform.position = transform.position+track_offset;
-		}
+
 		
 		if(Input.GetKeyDown("u")){
 			items=0;
