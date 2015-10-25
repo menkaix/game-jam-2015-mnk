@@ -14,6 +14,8 @@ public class Canon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		lineRenderer.SetPosition(0, transform.position);
+
         if (Input.GetMouseButtonDown(0))
         {
             fire();            

@@ -6,6 +6,8 @@ public class WayPoint : MonoBehaviour {
 	public WayPoint way1 ;
 	public WayPoint way2 ;
 
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -24,10 +26,13 @@ public class WayPoint : MonoBehaviour {
 		float factor = Random.value - Random.value;
 
 		if (factor < 0) {
-			if(way1 != null)
+			if(way1 != null){
 				other.gameObject.transform.LookAt(way1.transform.position);
+			}
 			else
+			{
 				GameObject.Destroy(other.gameObject);
+			}
 
 		} else {
 			if(way1 != null)
