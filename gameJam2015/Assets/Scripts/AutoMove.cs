@@ -12,6 +12,6 @@ public class AutoMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = transform.position + speed * transform.forward;
+		transform.position = transform.position + speed * transform.forward * Time.deltaTime ;
 	}
 }
