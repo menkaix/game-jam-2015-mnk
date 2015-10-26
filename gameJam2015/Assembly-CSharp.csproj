@@ -47,6 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\Field.cs" />
      <Compile Include="Assets\FollowMouse.cs" />
+     <Compile Include="Assets\GameOver.cs" />
+     <Compile Include="Assets\GameStart.cs" />
      <Compile Include="Assets\Scripts\AutoMove.cs" />
      <Compile Include="Assets\Scripts\Balle.cs" />
      <Compile Include="Assets\Scripts\BellBehaviour.cs" />
@@ -54,19 +56,27 @@
      <Compile Include="Assets\Scripts\CamsFollow.cs" />
      <Compile Include="Assets\Scripts\Canon.cs" />
      <Compile Include="Assets\Scripts\Ennemy.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\Move.cs" />
      <Compile Include="Assets\Scripts\Perso.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\StickTo.cs" />
      <Compile Include="Assets\Scripts\Tracking.cs" />
+     <Compile Include="Assets\Scripts\UImanage.cs" />
      <Compile Include="Assets\Scripts\WayPoint.cs" />
      <Compile Include="Assets\Scripts\timer.cs" />
      <None Include="Assets\Shaders\Outliner.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

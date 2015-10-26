@@ -6,7 +6,13 @@ public class Spawner : BellBehaviour {
 
 	public GameObject original ;
 
+	public static bool ok = false;
+
 	public override void action(){
+
+		if (!ok)
+			return;
+
 		GameObject go = GameObject.Instantiate (original);
 		go.transform.parent = transform;
 		go.transform.localPosition = new Vector3 (0,0,0);

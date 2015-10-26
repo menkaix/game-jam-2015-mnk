@@ -36,13 +36,13 @@ public class Perso : MonoBehaviour {
 		
 
 		
-		if(Input.GetKeyDown("u")){
+		if(Input.GetKeyDown(KeyCode.Alpha1)){
 			items=0;
 		}
-		if(Input.GetKeyDown("i")){
+		if(Input.GetKeyDown(KeyCode.Alpha2)){
 			items=1;
 		}
-		if(Input.GetKeyDown("o")){
+		if(Input.GetKeyDown(KeyCode.Alpha3)){
 			items=2;
 		}
 		
