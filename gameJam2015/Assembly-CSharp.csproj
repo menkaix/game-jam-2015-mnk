@@ -53,11 +53,13 @@
      <Compile Include="Assets\Scripts\CamsFollow.cs" />
      <Compile Include="Assets\Scripts\Canon.cs" />
      <Compile Include="Assets\Scripts\Ennemy.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\Move.cs" />
      <Compile Include="Assets\Scripts\Perso.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\StickTo.cs" />
      <Compile Include="Assets\Scripts\Tracking.cs" />
+     <Compile Include="Assets\Scripts\UImanage.cs" />
      <Compile Include="Assets\Scripts\WayPoint.cs" />
      <Compile Include="Assets\Scripts\timer.cs" />
      <None Include="Assets\Shaders\Outliner.shader" />
